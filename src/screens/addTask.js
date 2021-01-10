@@ -19,6 +19,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {useHistory} from 'react-router-dom';
+import {NativeRouter, BackButton} from 'react-router-native';
+
 // components
 import HeaderComponent from '../components/header';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -33,6 +36,7 @@ import {
 const {widthDimen, heightDimen} = Dimensions.get('window');
 
 const Home = () => {
+  let history = useHistory();
   const [value, onChangeText] = React.useState('Useless Placeholder');
   // date select
   const [date, setDate] = useState(new Date(1598051730000));
@@ -63,7 +67,13 @@ const Home = () => {
       <View style={styles.headerArea}>
         <View style={styles.iconFlex}>
           <View style={styles.iconFlex1}>
-            <Icon name="chevron-left" size={hp('3%')} color="white" />
+            <Icon
+              onPress={() => history.goBack()}
+              name="chevron-left"
+              size={hp('3%')}
+              color="white"
+            />
+            <BackButton />
           </View>
           <View style={styles.iconFlex2} />
           <View style={styles.iconFlex3} />

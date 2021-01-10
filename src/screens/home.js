@@ -18,6 +18,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {useHistory} from 'react-router-dom';
+
 // components
 import HeaderComponent from '../components/header';
 
@@ -31,6 +33,11 @@ import {
 const {widthDimen, heightDimen} = Dimensions.get('window');
 
 const Home = () => {
+  let history = useHistory();
+  const getAddTaskScreen = () => {
+    history.push('/addtask');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.headerArea}>
@@ -43,7 +50,9 @@ const Home = () => {
       </View>
       <View style={styles.footerArea}>
         <View style={styles.taskAddView}>
-          <TouchableOpacity style={styles.taskAddTouchButton}>
+          <TouchableOpacity
+            onPress={getAddTaskScreen}
+            style={styles.taskAddTouchButton}>
             <Text style={{color: Colors.white}}>Create New Task</Text>
           </TouchableOpacity>
         </View>

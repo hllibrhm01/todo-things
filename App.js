@@ -28,8 +28,8 @@ const App = () => {
   return (
     <NativeRouter>
       <View>
-        <Route exact path="/" component={AddTask} />
-        <Route path="/about" component={Welcome} />
+        <Route exact path="/" component={Home} />
+        <Route path="/addtask" component={AddTask} />
       </View>
     </NativeRouter>
   );
