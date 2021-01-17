@@ -24,11 +24,13 @@ import Home from './src/screens/home';
 import Welcome from './src/screens/welcome';
 import AddTask from './src/screens/addTask';
 
+import DatePicker from './src/components/datetimepicker';
+
 const App = () => {
   return (
     <NativeRouter>
       <View>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={DatePicker} />
         <Route path="/addtask" component={AddTask} />
       </View>
     </NativeRouter>

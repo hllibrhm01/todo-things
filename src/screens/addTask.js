@@ -73,7 +73,6 @@ const Home = () => {
               size={hp('3%')}
               color="white"
             />
-            <BackButton />
           </View>
           <View style={styles.iconFlex2} />
           <View style={styles.iconFlex3} />
