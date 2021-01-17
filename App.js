@@ -30,7 +30,7 @@ const App = () => {
   return (
     <NativeRouter>
       <View>
-        <Route exact path="/" component={DatePicker} />
+        <Route exact path="/" component={AddTask} />
         <Route path="/addtask" component={AddTask} />
       </View>
     </NativeRouter>

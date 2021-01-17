@@ -9,15 +9,24 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import Moment from 'moment';
+
 const DatePicker = () => {
     const [date, setDate] = useState(new Date(1598051730000));
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
+    const [showDate, setShowDate] = useState('Date not set');
+    const [showTime, setShowTime] = useState('Time not set');
 
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
         setShow(Platform.OS === 'ios');
         setDate(currentDate);
+        Moment.locale('en');
+        let dateFormat = Moment(currentDate).format('DD-MM-YYYY');
+        let timeFormat = Moment(currentDate).format('hh:mm');
+        setShowDate(dateFormat);
+        setShowTime(timeFormat);
     };
 
     const showMode = (currentMode) => {
@@ -38,8 +47,7 @@ const DatePicker = () => {
             <View>
                 <View
                     style={{
-                        marginTop: 100,
-                        backgroundColor: 'pink'
+                        marginTop: hp('3%'),
                     }}
                 >
                     <View
@@ -61,17 +69,17 @@ const DatePicker = () => {
                     >
                         <View
                             style={{
-                                width: wp('90%'),
+                                width: wp('75%'),
                                 marginLeft: wp('2%')
                             }}
                         >
-                            <TextInput
-                                placeholder="Enter input"
+                            <Text
                                 style={{
-                                    borderRadius: 20,
-                                    borderColor: 'black',
+                                    width: wp('75%'),
+                                    marginTop: hp('4%'),
+                                    borderBottomWidth: 0.2,
                                 }}
-                            />
+                            >{showDate}</Text>
                         </View>
                         <View
                             style={{
@@ -92,7 +100,61 @@ const DatePicker = () => {
                 </View>
             </View>
             <View>
-                <Button onPress={showTimepicker} title="Show time picker!" />
+                <View>
+                    <View
+                        style={{
+                            marginTop: hp('3%'),
+                        }}
+                    >
+                        <View
+                            style={{
+                                marginLeft: wp('2%'),
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    color: 'gray',
+                                }}
+                            >Time</Text>
+                        </View>
+                        <View
+                            style={{
+                                flexDirection: 'row',
+                                width: wp('100%')
+                            }}
+                        >
+                            <View
+                                style={{
+                                    width: wp('75%'),
+                                    marginLeft: wp('2%'),
+                                }}
+                            >
+                                <Text
+                                    style={{
+                                        width: wp('75%'),
+                                        marginTop: hp('4%'),
+                                        borderBottomWidth: 0.2,
+                                    }}
+                                >{showTime}</Text>
+                            </View>
+                            <View
+                                style={{
+                                    right: 0,
+                                    width: wp('10%'),
+                                    marginRight: wp('2%'),
+                                    marginTop: hp('2%')
+                                }}
+                            >
+                                <Icon
+                                    onPress={showTimepicker}
+                                    name="hourglass-start"
+                                    size={hp('3%')}
+                                    color="black"
+                                />
+                            </View>
+                        </View>
+                    </View>
+                </View>
             </View>
             {show && (
                 <DateTimePicker
@@ -101,6 +163,7 @@ const DatePicker = () => {
                     mode={mode}
                     is24Hour={true}
                     display="default"
+                    minimumDate={new Date()}
                     onChange={onChange}
                 />
             )}

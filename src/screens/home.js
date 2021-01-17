@@ -53,7 +53,10 @@ const Home = () => {
           <TouchableOpacity
             onPress={getAddTaskScreen}
             style={styles.taskAddTouchButton}>
-            <Text style={{color: Colors.white}}>Create New Task</Text>
+            <Text style={{
+              fontWeight: 'bold',
+              color: Colors.white
+            }}>Create New Task</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -63,9 +66,7 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: wp('100%'),
-    marginTop: wp('10%'),
     flexDirection: 'column',
   },
   headerArea: {
@@ -75,21 +76,24 @@ const styles = StyleSheet.create({
   },
   bodyArea: {
     width: '100%',
-    height: hp('75%'),
+    height: hp('80%'),
     backgroundColor: 'skyblue',
   },
   footerArea: {
     width: '100%',
-    height: hp('15%'),
-    backgroundColor: 'steelblue',
+    height: hp('10%'),
+    bottom: 0,
+    left: 0,
+    right: 0,
+    justifyContent: 'flex-end',
   },
   taskAddView: {
     width: wp('100%'),
-    height: hp('10%'),
+    height: hp('8%'),
     alignItems: 'center',
-    marginTop: hp('1%'),
-    justifyContent: 'center',
     borderRadius: 10,
+    justifyContent: 'center',
+    marginBottom: hp('2%'),
     backgroundColor: '#4540c1',
   },
 });

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -19,8 +19,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {useHistory} from 'react-router-dom';
-import {NativeRouter, BackButton} from 'react-router-native';
+import { useHistory } from 'react-router-dom';
+import { NativeRouter, BackButton } from 'react-router-native';
 
 // components
 import HeaderComponent from '../components/header';
@@ -33,34 +33,14 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const {widthDimen, heightDimen} = Dimensions.get('window');
+const { widthDimen, heightDimen } = Dimensions.get('window');
+
+// components
+import DateTimePickers from '../components/datetimepicker';
 
 const Home = () => {
   let history = useHistory();
   const [value, onChangeText] = React.useState('Useless Placeholder');
-  // date select
-  const [date, setDate] = useState(new Date(1598051730000));
-  const [mode, setMode] = useState('date');
-  const [show, setShow] = useState(false);
-
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShow(Platform.OS === 'android');
-    setDate(currentDate);
-  };
-
-  const showMode = (currentMode) => {
-    setShow(true);
-    setMode(currentMode);
-  };
-
-  const showDatepicker = () => {
-    showMode('date');
-  };
-
-  const showTimepicker = () => {
-    showMode('time');
-  };
 
   return (
     <View style={styles.container}>
@@ -84,86 +64,117 @@ const Home = () => {
           <View
             style={{
               width: '100%',
-              height: 50,
-              flex: 1,
+              flexDirection: 'row',
+              marginTop: hp('2%'),
             }}>
             <TextInput
               style={{
+                width: wp('75%'),
                 height: 40,
                 borderColor: 'gray',
                 borderWidth: 0,
                 marginLeft: wp('3%'),
                 alignItems: 'center',
                 justifyContent: 'center',
+                fontSize: 17,
               }}
               onChangeText={(text) => onChangeText(text)}
               placeholder="Your task name"
             />
+            <Icon
+              name="microphone"
+              size={hp('3%')}
+              color="black"
+            />
+          </View>
+          <View>
+            <DateTimePickers />
+          </View>
+          <View
+            style={{
+              marginTop: wp('3%'),
+            }}
+          >
+            <View>
+              <View>
+                <View
+                  style={{
+                    marginTop: hp('2%'),
+                  }}
+                >
+                  <View
+                    style={{
+                      marginLeft: wp('2%'),
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: 'gray',
+                      }}
+                    >Description</Text>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      width: wp('100%')
+                    }}
+                  >
+                    <View
+                      style={{
+                        width: wp('75%'),
+                        marginLeft: wp('2%'),
+                      }}
+                    >
+                      <Text
+                        style={{
+                          width: wp('75%'),
+                          marginTop: hp('4%'),
+                          borderBottomWidth: 0.2,
+                        }}
+                      >asdad</Text>
+                    </View>
+                    <View
+                      style={{
+                        right: 0,
+                        width: wp('10%'),
+                        marginRight: wp('2%'),
+                        marginTop: hp('2%')
+                      }}
+                    >
+                      <Icon
+                        name="microphone"
+                        size={hp('3%')}
+                        color="black"
+                      />
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
           </View>
           <View
             style={{
               width: '100%',
-              height: 50,
               flex: 1,
-            }}>
-            <Text style={{color: 'gray'}}>DATE</Text>
-            <View>
-              <Button onPress={showDatepicker} title="Show date picker!" />
-            </View>
-            <View>
-              <Button onPress={showTimepicker} title="Show time picker!" />
-            </View>
-            {show && (
-              <DateTimePicker
-                testID="dateTimePicker"
-                value={date}
-                mode={mode}
-                is24Hour={true}
-                display="default"
-                onChange={onChange}
+            }}
+          />
+          <View
+            style={{
+              width: '100%',
+              height: 50,
+              alignItems: 'center',
+              flex: 3,
+            }}
+          >
+            <TouchableOpacity
+              style={styles.roundButton1}>
+              <Icon
+                name="check"
+                size={hp('5%')}
+                color="white"
               />
-            )}
+            </TouchableOpacity>
           </View>
-          <View
-            style={{
-              width: '100%',
-              height: 50,
-              backgroundColor: 'red',
-              flex: 1,
-            }}
-          />
-          <View
-            style={{
-              width: '100%',
-              height: 50,
-              backgroundColor: 'green',
-              flex: 1,
-            }}
-          />
-          <View
-            style={{
-              width: '100%',
-              height: 50,
-              backgroundColor: 'yellow',
-              flex: 1,
-            }}
-          />
-          <View
-            style={{
-              width: '100%',
-              height: 50,
-              backgroundColor: 'purple',
-              flex: 2,
-            }}
-          />
-          <View
-            style={{
-              width: '100%',
-              height: 50,
-              backgroundColor: 'purple',
-              flex: 6,
-            }}
-          />
         </View>
       </View>
     </View>
@@ -223,6 +234,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: hp('15%'),
     fontSize: wp('6%'),
+  },
+  roundButton1: {
+    width: 70,
+    height: 70,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    backgroundColor: '#4540c1',
   },
 });
 
