@@ -76,7 +76,7 @@ const DatePicker = () => {
                             <Text
                                 style={{
                                     width: wp('75%'),
-                                    marginTop: hp('4%'),
+                                    marginTop: hp('2%'),
                                     borderBottomWidth: 0.2,
                                 }}
                             >{showDate}</Text>
@@ -86,7 +86,7 @@ const DatePicker = () => {
                                 right: 0,
                                 width: wp('10%'),
                                 marginRight: wp('2%'),
-                                marginTop: hp('2%')
+                                marginTop: hp('1%')
                             }}
                         >
                             <Icon
@@ -132,7 +132,7 @@ const DatePicker = () => {
                                 <Text
                                     style={{
                                         width: wp('75%'),
-                                        marginTop: hp('4%'),
+                                        marginTop: hp('2%'),
                                         borderBottomWidth: 0.2,
                                     }}
                                 >{showTime}</Text>
@@ -142,7 +142,7 @@ const DatePicker = () => {
                                     right: 0,
                                     width: wp('10%'),
                                     marginRight: wp('2%'),
-                                    marginTop: hp('2%')
+                                    marginTop: hp('1%')
                                 }}
                             >
                                 <Icon

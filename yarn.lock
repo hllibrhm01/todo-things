@@ -1141,6 +1141,13 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz#e42b1bef12d2415411519fd528e64b593b1363dc"
   integrity sha512-W/J0fNYVO01tioHjvYWQ9m6RgndVtbElzYozBq1ZPrHO/iCzlqoySHl4gO/fpCl9QEFjvJfjPgtPMTMlsoq5DQ==
 
+"@react-native-community/voice@^1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@react-native-community/voice/-/voice-1.1.9.tgz#461f5d82fe9708b42bec0fe2ebded66d5f08780e"
+  integrity sha512-6QC51lIxdtPyIWyJEG7qsZ0nyRQFV7wUREcnvlQD3+xyk3p5na9LELR+rkIGdxVbLb3WJ73rhgjrc/ywyUh10Q==
+  dependencies:
+    invariant "^2.2.4"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.1.tgz#e7df00f98a203324f6dc7cc606cad9d4a8ab2217"
@@ -5778,6 +5785,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
+react-native-camera@^3.42.0:
+  version "3.42.0"
+  resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.42.0.tgz#e9778b77a2da96e42d604d1766ca331281b5b85f"
+  integrity sha512-DFsZeRy9TKP/pGef5iLX1AWxP9eAnlbGcA76fEoFXse6EP56sdgjYe+wudJsGZ//arGrYBqjq6wog13HMsJaoQ==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-elements@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-3.1.0.tgz#ff2d6fd0ed91b1ebdd15598c4da1fcb2d5780c5f"
@@ -5793,6 +5807,11 @@ react-native-elements@^3.1.0:
     react-native-ratings "^7.3.0"
     react-native-safe-area-context "^3.1.9"
     react-native-size-matters "^0.3.1"
+
+react-native-push-notification@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-7.2.0.tgz#f8c12896159bab91266332f8928679544a9463d4"
+  integrity sha512-MRyuRJrnYCK1qrSwSaUKRrlDgYQZLlnvnzOIPtAGOWpuOnUeGMX5ClnTPfU4gGqyJn5DyQFwD3WVRPUHJxT4Fw==
 
 react-native-ratings@^7.3.0:
   version "7.3.0"

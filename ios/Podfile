@@ -14,9 +14,21 @@ target 'Todo' do
 
   pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
 
+  pod 'react-native-voice', :path => '../node_modules/@react-native-community/voice'
+
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
   target 'TodoTests' do
     inherit! :complete
     # Pods for testing
+  end
+  
+  post_install do |pi|
+      pi.pods_project.targets.each do |t|
+        t.build_configurations.each do |config|
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.2.99'
+        end
+      end
   end
 
   # Enables Flipper.

@@ -51,12 +51,14 @@ const Home = () => {
       <View style={styles.footerArea}>
         <View style={styles.taskAddView}>
           <TouchableOpacity
-            onPress={getAddTaskScreen}
             style={styles.taskAddTouchButton}>
-            <Text style={{
-              fontWeight: 'bold',
-              color: Colors.white
-            }}>Create New Task</Text>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                color: Colors.white,
+              }}>
+              Create New Task
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

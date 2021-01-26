@@ -23,6 +23,9 @@ import {NativeRouter, Route} from 'react-router-native';
 import Home from './src/screens/home';
 import Welcome from './src/screens/welcome';
 import AddTask from './src/screens/addTask';
+import RecordVoice from './src/components/recordVoice';
+import RecordVoices from './src/components/recordVoices';
+import CameraView from './src/components/camera';
 
 import DatePicker from './src/components/datetimepicker';
 
